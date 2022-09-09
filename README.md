@@ -6,3 +6,6 @@
 
 ## Activity 2
 ### Inventory App
+
+## Activity 3
+### Mars Screenshot
