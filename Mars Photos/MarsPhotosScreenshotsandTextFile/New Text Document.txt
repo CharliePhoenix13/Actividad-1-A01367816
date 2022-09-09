@@ -1,0 +1,40 @@
+Creo que averigue porque el gradle no funcionaba antes.
+
+Lo que se tenia que hacer en el paso 5 era sincronizar la parte scalar del codigo primero:
+
+// Retrofit
+implementation "com.squareup.retrofit2:retrofit:2.9.0"
+// Retrofit with scalar Converter
+implementation "com.squareup.retrofit2:converter-scalars:2.9.0"
+
+y luego en el paso 8 te pide de que remplazes el codigo scalar con el codigo de moshi:
+
+// Moshi
+implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
+// Retrofit with Moshi Converter
+implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+
+Pero aparentemente, lo que se tiene que hacer primero antes de quitar el codigo scalar para que 
+funcione el codigo moshi en el codigo essincronizar los codigos scalar y moshi juntos primero 
+para que funcione.
+
+// Retrofit
+implementation "com.squareup.retrofit2:retrofit:2.9.0"
+// Retrofit with scalar Converter
+implementation "com.squareup.retrofit2:converter-scalars:2.9.0"
+// Moshi
+implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
+// Retrofit with Moshi Converter
+implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+
+Y luego android studio te permite que puedas quitar el codigo scalar y solo dejes el codigo moshi
+para que jale todo.
+
+// Moshi
+implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
+// Retrofit with Moshi Converter
+implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+
+Y creeme que no estoy mintiendo sobre esto, reintente el codigo desde 0 otra vez y sincronizando
+el retrofit scalar y moshi juntos me jalo el codigo 100%, no se porque hace esto y trate de 
+revisar por una razon de porque hace eso pero desafortunadamente no encontre una solucion.
