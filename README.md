@@ -9,3 +9,6 @@
 
 ## Activity 3
 ### Mars Screenshot
+
+## Activity 4
+### MediaPlayer
